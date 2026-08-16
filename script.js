@@ -279,8 +279,22 @@ function initContactFormHandling() {
     }
 
     formError.textContent = "";
-    showToast("Your enquiry has been submitted successfully.");
-    contactForm.reset();
+
+    // Prepare WhatsApp message so owner receives enquiry
+    const name = formData.get('fullName').trim();
+    const mobile = formData.get('mobileNumber').trim();
+    const email = formData.get('emailAddress').trim();
+    const service = formData.get('serviceSelect').trim() || 'Not specified';
+    const messageText = formData.get('message').trim();
+
+    const whatsappText = `New Enquiry:\nName: ${name}\nMobile: ${mobile}\nEmail: ${email}\nService: ${service}\nMessage: ${messageText}`;
+
+    // Open WhatsApp to send the enquiry to the configured number
+    showToast('Opening WhatsApp to send your enquiry...');
+    openWhatsApp(whatsappText);
+
+    // Reset form after short delay to allow WhatsApp to open
+    setTimeout(() => contactForm.reset(), 600);
   });
 }
 
