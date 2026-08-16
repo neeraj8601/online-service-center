@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Professional online service center for form filling, government document assistance, career guidance, admission forms and travel booking."
+    />
+    <title>Your Service Center | Digital Seva</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="#home" class="logo" aria-label="Your Service Center Home">
+          <span class="logo-mark">Y</span>
+          <span class="logo-text">Your Service Center</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#home" class="active">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact Us</a>
+          <a href="#profile">Profile</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="#profile" class="profile-btn">Profile</a>
+          <a href="#" class="whatsapp-btn small-btn" data-whatsapp-message="Hello, I want to know about your online services.">WhatsApp</a>
+        </div>
+
+        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero section">
+        <div class="container hero-grid">
+          <div class="hero-content reveal">
+            <span class="eyebrow">Trusted Digital Assistance</span>
+            <h1>Your One-Stop Digital Service Center</h1>
+            <p>
+              Form Filling • Document Services • Ticket Booking • Admission Forms • Career Guidance
+            </p>
+            <div class="hero-actions">
+              <a href="#services" class="btn btn-primary">Explore Services</a>
+              <a href="#" class="btn btn-whatsapp" data-whatsapp-message="Hello, I want to know about your online services.">Contact on WhatsApp</a>
+            </div>
+            <ul class="hero-metrics">
+              <li><strong>500+</strong><span>Customers</span></li>
+              <li><strong>20+</strong><span>Services</span></li>
+              <li><strong>24/7</strong><span>Support</span></li>
+            </ul>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="visual-card card-main">
+              <div class="mini-tag">Digital Services</div>
+              <h3>Online Assistance</h3>
+              <div class="form-stack">
+                <span>Form Fill</span>
+                <span>Government Docs</span>
+                <span>Travel Booking</span>
+              </div>
+            </div>
+            <div class="visual-card card-floating small floating-one">
+              <span>💼</span>
+              <p>Job & Admission</p>
+            </div>
+            <div class="visual-card card-floating small floating-two">
+              <span>🛂</span>
+              <p>Train Booking</p>
+            </div>
+            <div class="visual-card stat-card">
+              <strong>₹200</strong>
+              <span>Any Form Filling</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="offer-section section">
+        <div class="container">
+          <div class="offer-banner reveal">
+            <div class="offer-content">
+              <span class="offer-label">🔥 SPECIAL OFFER</span>
+              <h2>ANY FORM FILLING – ONLY ₹200</h2>
+              <p>Fast • Simple • Reliable</p>
+            </div>
+            <div class="offer-price-box">
+              <span class="price-tag">₹200</span>
+              <button class="btn btn-primary offer-button" data-service="Any Form Filling">Get Service Now</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="career" class="career-section section">
+        <div class="container">
+          <div class="career-card reveal">
+            <div class="career-copy">
+              <h2>🎓 Completed Class 12? Confused About What To Do Next?</h2>
+              <p>
+                If you have completed Class 12 and want guidance about your next course, college, career or competitive exam, chat with us on WhatsApp.
+              </p>
+            </div>
+            <div class="career-action">
+              <div class="price-pill">Career Guidance – Only ₹9</div>
+              <a href="#" class="btn btn-success" data-whatsapp-message="Hello, I have completed Class 12 and I want career/course guidance. I would like to know what I should do next.">Chat on WhatsApp – ₹9</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="services-section section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow centered">Our Services</span>
+            <h2>Our Services</h2>
+            <p>Fast and reliable digital services under one roof.</p>
+          </div>
+
+          <div class="service-tools reveal">
+            <div class="search-box">
+              <input type="search" id="serviceSearch" placeholder="Search a service..." aria-label="Search a service" />
+            </div>
+            <div class="filter-buttons" aria-label="Service categories">
+              <button class="filter-btn active" data-filter="All">All</button>
+              <button class="filter-btn" data-filter="Education">Education</button>
+              <button class="filter-btn" data-filter="Government Services">Government Services</button>
+              <button class="filter-btn" data-filter="Certificates">Certificates</button>
+              <button class="filter-btn" data-filter="Travel Booking">Travel Booking</button>
+              <button class="filter-btn" data-filter="Jobs">Jobs</button>
+            </div>
+          </div>
+
+          <div id="serviceGrid" class="service-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="process" class="how-it-works section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow centered">How It Works</span>
+            <h2>How It Works</h2>
+          </div>
+
+          <div class="steps-grid">
+            <div class="step-card reveal">
+              <div class="step-number">01</div>
+              <div class="step-icon">✅</div>
+              <h3>Choose Service</h3>
+              <p>Select the service you need.</p>
+            </div>
+            <div class="step-card reveal">
+              <div class="step-number">02</div>
+              <div class="step-icon">📲</div>
+              <h3>Contact Us</h3>
+              <p>Contact us through WhatsApp or phone.</p>
+            </div>
+            <div class="step-card reveal">
+              <div class="step-number">03</div>
+              <div class="step-icon">📄</div>
+              <h3>Submit Details</h3>
+              <p>Provide the required information/documents.</p>
+            </div>
+            <div class="step-card reveal">
+              <div class="step-number">04</div>
+              <div class="step-icon">🎯</div>
+              <h3>Get Assistance</h3>
+              <p>Our team helps you complete the process.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="why-us" class="why-us section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow centered">Why Choose Us</span>
+            <h2>Why People Trust Our Service Center</h2>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-card reveal">
+              <div class="feature-icon">⚡</div>
+              <h3>Easy & Simple Process</h3>
+            </div>
+            <div class="feature-card reveal">
+              <div class="feature-icon">🚀</div>
+              <h3>Fast Service</h3>
+            </div>
+            <div class="feature-card reveal">
+              <div class="feature-icon">💬</div>
+              <h3>Transparent Charges</h3>
+            </div>
+            <div class="feature-card reveal">
+              <div class="feature-icon">🧩</div>
+              <h3>Multiple Services</h3>
+            </div>
+            <div class="feature-card reveal">
+              <div class="feature-icon">🤝</div>
+              <h3>Customer Support</h3>
+            </div>
+            <div class="feature-card reveal">
+              <div class="feature-icon">🔒</div>
+              <h3>Secure & Responsible Handling</h3>
+            </div>
+          </div>
+
+          <div class="stats-grid reveal">
+            <div class="stat-box">
+              <span class="counter" data-target="500">0</span>
+              <p>Customers Served</p>
+            </div>
+            <div class="stat-box">
+              <span class="counter" data-target="20">0</span>
+              <p>Services</p>
+            </div>
+            <div class="stat-box">
+              <span class="counter" data-target="1000">0</span>
+              <p>Forms Assisted</p>
+            </div>
+            <div class="stat-box">
+              <span class="counter" data-target="24">0</span>
+              <p>7 Online Enquiry</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about-section section">
+        <div class="container about-grid">
+          <div class="about-visual reveal">
+            <div class="about-image-panel">
+              <div class="panel-card light">
+                <span>🛎️</span>
+                <h4>Service Desk</h4>
+                <p>Online support and guidance</p>
+              </div>
+              <div class="panel-card dark">
+                <span>📄</span>
+                <h4>Form Assistance</h4>
+                <p>Complete and verified</p>
+              </div>
+            </div>
+          </div>
+          <div class="about-content reveal">
+            <span class="eyebrow">About Our Service Center</span>
+            <h2>About Our Service Center</h2>
+            <p>
+              We provide convenient digital assistance for online forms, educational applications, government-related services, document applications and travel booking. Our goal is to make online services simpler and easier for customers.
+            </p>
+            <ul class="check-list">
+              <li>Fast and guided form assistance</li>
+              <li>Trusted support for official services</li>
+              <li>Clear guidance for documentation and booking</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="profile" class="profile-section section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow centered">Customer Profile</span>
+            <h2>My Profile</h2>
+          </div>
+
+          <div class="profile-card reveal">
+            <div class="profile-header">
+              <div class="avatar">NK</div>
+              <div>
+                <h3 id="customerName">Neeraj Kumar</h3>
+                <p>Verified customer</p>
+              </div>
+            </div>
+
+            <div class="profile-grid">
+              <div class="profile-box">
+                <span>Mobile Number</span>
+                <strong id="customerPhone">+91 8601351042</strong>
+              </div>
+              <div class="profile-box">
+                <span>Email</span>
+                <strong id="customerEmail">neerajkumar860135@gmail.com</strong>
+              </div>
+              <div class="profile-box">
+                <span>Total Services Used</span>
+                <strong>08</strong>
+              </div>
+            </div>
+
+            <div class="profile-lists">
+              <div class="list-card">
+                <h4>Recent Applications</h4>
+                <ul>
+                  <li>CUET UG Form Filing</li>
+                  <li>Scholarship Form</li>
+                  <li>Aadhaar Update Assistance</li>
+                </ul>
+              </div>
+              <div class="list-card">
+                <h4>Booking History</h4>
+                <ul>
+                  <li>Flight Booking – Delhi to Mumbai</li>
+                  <li>Train Ticket – Kanpur to Lucknow</li>
+                  <li>Bus Booking – Agra to Noida</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="profile-actions">
+              <button class="btn btn-primary">Support / Help</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section section">
+        <div class="container contact-grid">
+          <div class="contact-info reveal">
+            <span class="eyebrow">Get In Touch</span>
+            <h2>Get In Touch</h2>
+
+            <div class="info-list">
+              <div class="info-item">
+                <span>📞</span>
+                <div>
+                  <label>Phone</label>
+                  <p>+91 8601351042</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <span>💬</span>
+                <div>
+                  <label>WhatsApp</label>
+                  <p>+91 8601351042</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <span>✉️</span>
+                <div>
+                  <label>Email</label>
+                  <p>neerajkumar860135@gmail.com</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <span>📍</span>
+                <div>
+                  <label>Address</label>
+                  <p>Sector 12, Lucknow, Uttar Pradesh</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <span>🕒</span>
+                <div>
+                  <label>Working Hours</label>
+                  <p>Mon - Sun: 9:00 AM - 9:00 PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-wrap reveal">
+            <form id="contactForm" novalidate>
+              <div class="input-group">
+                <label for="fullName">Full Name</label>
+                <input id="fullName" name="fullName" type="text" placeholder="Enter your full name" />
+              </div>
+
+              <div class="input-group">
+                <label for="mobileNumber">Mobile Number</label>
+                <input id="mobileNumber" name="mobileNumber" type="tel" placeholder="Enter your mobile number" />
+              </div>
+
+              <div class="input-group">
+                <label for="emailAddress">Email</label>
+                <input id="emailAddress" name="emailAddress" type="email" placeholder="Enter your email" />
+              </div>
+
+              <div class="input-group">
+                <label for="serviceSelect">Select Service</label>
+                <select id="serviceSelect" name="serviceSelect">
+                  <option value="">Choose a service</option>
+                </select>
+              </div>
+
+              <div class="input-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Tell us how we can help you"></textarea>
+              </div>
+
+              <p id="formError" class="form-error" aria-live="polite"></p>
+              <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="faq-section section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow centered">FAQ</span>
+            <h2>Frequently Asked Questions</h2>
+          </div>
+
+          <div class="faq-list reveal">
+            <div class="faq-item active">
+              <button class="faq-question" aria-expanded="true">What documents are required for form filling?</button>
+              <div class="faq-answer">
+                <p>Documents vary by service and official requirements. Usually you need identity proof, address proof, educational records, and the relevant application details. Actual eligibility, documents, and official requirements depend on the authority or institution involved.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">How can I contact you?</button>
+              <div class="faq-answer">
+                <p>You can contact us through WhatsApp, phone call, or by using the contact form on this website. We will guide you on the next steps based on the service you need.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">How does the ₹200 form filling offer work?</button>
+              <div class="faq-answer">
+                <p>The ₹200 offer applies to selected form-filling assistance services as provided by us. Actual form fees, official charges, and eligibility conditions remain subject to the issuing authority or government portal.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">Can I get career guidance after Class 12?</button>
+              <div class="faq-answer">
+                <p>Yes, we provide career guidance support for Class 12 students. The final decision depends on your academic profile, eligibility, college rules, and the entrance or course requirements of the relevant institutions.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">Is Tatkal ticket booking guaranteed?</button>
+              <div class="faq-answer">
+                <p>No. Tatkal ticket booking depends on official railway rules, availability, demand, and system allocation. We can assist with booking support, but confirmation is subject to official railway availability and requirements.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">Are ticket prices fixed?</button>
+              <div class="faq-answer">
+                <p>No. Ticket prices, availability, and fare rules are set by railways, airlines, or bus operators, and can change depending on route, demand, timing, taxes, and official charges.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">How can I apply for certificate services?</button>
+              <div class="faq-answer">
+                <p>Contact us through WhatsApp or the contact form and share the required details and documents. We will guide you through the registration, form, and submission process, subject to eligibility and official requirements.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">How can I check my service status?</button>
+              <div class="faq-answer">
+                <p>After submitting your details, you can contact us for updates. Status depends on the processing time of the concerned authority, official portals, documentation review, and any pending verification requirements.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="logo footer-logo">
+            <span class="logo-mark">Y</span>
+            <span class="logo-text">Your Service Center</span>
+          </div>
+          <p>Digital assistance for forms, documents, admissions, certificates, and travel support.</p>
+          <div class="social-links">
+            <a href="https://www.instagram.com/neerajverma860135/" aria-label="Instagram">◎</a>
+            <a href="https://api.whatsapp.com/send/?phone=918601351042&text=Hello%2C+I+want+to+know+about+your+online+services.&type=phone_number&app_absent=0" aria-label="WhatsApp">w</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#profile">Profile</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Form Filling</a></li>
+            <li><a href="#services">Certificate Services</a></li>
+            <li><a href="#services">Ticket Booking</a></li>
+            <li><a href="#services">Admission Forms</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">WhatsApp</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#faq">Help</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© <span id="year"></span> Your Service Center. All Rights Reserved.</p>
+        <p>Services are provided subject to applicable rules, official availability and eligibility requirements.</p>
+      </div>
+    </footer>
+
+    <div class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+    <a href="#home" class="scroll-top" aria-label="Scroll to top">↑</a>
+
+    <a href="#" class="floating-whatsapp" aria-label="Chat with us" data-whatsapp-message="Hello, I want to know about your online services.">
+      <span>WhatsApp</span>
+    </a>
+
+    <div class="modal" id="enquiryModal" aria-hidden="true">
+      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-header">
+          <h3 id="modalTitle">Service Enquiry</h3>
+          <button class="modal-close" aria-label="Close modal">×</button>
+        </div>
+
+        <form id="enquiryForm" novalidate>
+          <div class="input-group">
+            <label for="modalName">Customer Name</label>
+            <input id="modalName" type="text" name="modalName" placeholder="Enter your name" />
+          </div>
+
+          <div class="input-group">
+            <label for="modalPhone">Mobile Number</label>
+            <input id="modalPhone" type="tel" name="modalPhone" placeholder="Enter your mobile number" />
+          </div>
+
+          <div class="input-group">
+            <label for="selectedService">Selected Service</label>
+            <input id="selectedService" type="text" name="selectedService" readonly />
+          </div>
+
+          <div class="input-group">
+            <label for="modalMessage">Message</label>
+            <textarea id="modalMessage" name="modalMessage" rows="4" placeholder="Tell us what you need"></textarea>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn btn-whatsapp send-whatsapp" data-whatsapp-message="">Send on WhatsApp</button>
+            <button type="button" class="btn btn-secondary modal-close-btn">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
