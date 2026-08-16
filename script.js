@@ -228,8 +228,38 @@ function showToast(message) {
 
 function openWhatsApp(message) {
   const encodedText = encodeURIComponent(message);
-  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedText}`;
-  window.open(url, "_blank");
+  const url = `https://api.whatsapp.com/send/?phone=${WHATSAPP_NUMBER}&text=${encodedText}&type=phone_number&app_absent=0`;
+  window.open(url, '_blank');
+}
+
+function showMessageModal(title, message) {
+  // Create a temporary modal for message display
+  const tempModal = document.createElement('div');
+  tempModal.style.cssText = `
+    position: fixed; inset: 0; background: rgba(15,23,42,0.6); 
+    display: flex; align-items: center; justify-content: center; 
+    padding: 20px; z-index: 3000;
+  `;
+  
+  const escapedMsg = message.replace(/\\/g, '\\\\').replace(/'/g, "\\'")
+    .replace(/"/g, '\\"').replace(/\n/g, '\\n');
+  
+  tempModal.innerHTML = `
+    <div style="background:white; border-radius:24px; padding:28px; max-width:500px; width:100%; box-shadow:0 20px 60px rgba(10,32,75,0.12);">
+      <h3 style="margin:0 0 16px; font-size:1.4rem; color:#063970;">${title}</h3>
+      <div style="background:#f5f9ff; border:1px solid rgba(11,94,215,0.1); border-radius:14px; padding:16px; margin:16px 0; max-height:200px; overflow-y:auto; white-space:pre-wrap; word-break:break-word; font-family:monospace; font-size:0.9rem; color:#1f2937;">${message}</div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <button type="button" style="flex:1; min-height:48px; background:#0b5ed7; color:white; border:none; border-radius:14px; font-weight:700; cursor:pointer;" onclick="navigator.clipboard.writeText('${escapedMsg}'); this.textContent='✓ Copied!'; setTimeout(()=>this.textContent='📋 Copy Message', 2000);">📋 Copy Message</button>
+        <button type="button" style="flex:1; min-height:48px; background:#25d366; color:white; border:none; border-radius:14px; font-weight:700; cursor:pointer;" onclick="window.open('https://api.whatsapp.com/send/?phone=918601351042&text=' + encodeURIComponent('${escapedMsg}') + '&type=phone_number&app_absent=0', '_blank');">💬 Send on WhatsApp</button>
+      </div>
+      <button type="button" style="width:100%; min-height:42px; margin-top:12px; background:#eef5ff; color:#063970; border:none; border-radius:12px; font-weight:700; cursor:pointer;" onclick="this.closest('div').parentElement.remove();">Close</button>
+    </div>
+  `;
+  
+  document.body.appendChild(tempModal);
+  tempModal.addEventListener('click', (e) => {
+    if (e.target === tempModal) tempModal.remove();
+  });
 }
 
 function attachWhatsAppLinks() {
@@ -280,7 +310,7 @@ function initContactFormHandling() {
 
     formError.textContent = "";
 
-    // Prepare WhatsApp message so owner receives enquiry
+    // Prepare WhatsApp message
     const name = formData.get('fullName').trim();
     const mobile = formData.get('mobileNumber').trim();
     const email = formData.get('emailAddress').trim();
@@ -289,12 +319,10 @@ function initContactFormHandling() {
 
     const whatsappText = `New Enquiry:\nName: ${name}\nMobile: ${mobile}\nEmail: ${email}\nService: ${service}\nMessage: ${messageText}`;
 
-    // Open WhatsApp to send the enquiry to the configured number
-    showToast('Opening WhatsApp to send your enquiry...');
-    openWhatsApp(whatsappText);
-
-    // Reset form after short delay to allow WhatsApp to open
-    setTimeout(() => contactForm.reset(), 600);
+    // Show message in modal for copy option and direct send
+    showMessageModal('Your Contact Form Submission', whatsappText);
+    
+    contactForm.reset();
   });
 }
 
@@ -534,5 +562,21 @@ document.addEventListener("DOMContentLoaded", () => {
   setCurrentYear();
   handleServiceApplication();
   modalCloseOnOutsideClick();
+  initPaymentCopy();
   revealElements();
 });
+
+function initPaymentCopy() {
+  document.querySelectorAll('.payment-copy').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const text = this.dataset.copy;
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = this.textContent;
+        this.textContent = '✓ Copied!';
+        setTimeout(() => { this.textContent = originalText; }, 2000);
+      }).catch(() => {
+        showToast('Failed to copy. Please try again.');
+      });
+    });
+  });
+}

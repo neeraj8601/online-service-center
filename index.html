@@ -14,7 +14,9 @@
     <header class="site-header">
       <div class="container nav-wrap">
         <a href="#home" class="logo" aria-label="Your Service Center Home">
-          <span class="logo-mark">Y</span>
+          <div class="logo-photo-mini">
+            <img src="./images/owner-photo.jpg" alt="Owner" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2240%22 height=%2240%22%3E%3Crect fill=%22%230b5ed7%22 width=%2240%22 height=%2240%22/%3E%3Ctext x=%2220%22 y=%2226%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2220%22 font-weight=%22bold%22%3ENK%3C/text%3E%3C/svg%3E'" />
+          </div>
           <span class="logo-text">Your Service Center</span>
         </a>
 
@@ -405,6 +407,64 @@
               <p id="formError" class="form-error" aria-live="polite"></p>
               <button type="submit" class="btn btn-primary btn-block">Submit</button>
             </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="payment" class="payment-section section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow centered">Payment Methods</span>
+            <h2>Make Payment</h2>
+            <p>Choose your preferred payment method</p>
+          </div>
+
+          <div class="payment-grid">
+            <div class="payment-card reveal">
+              <div class="payment-icon">📱</div>
+              <h3>UPI Payment</h3>
+              <p class="upi-id" style="color:#0b5ed7; font-weight:700; font-size:1.1rem;">neerajverma@ybl</p>
+              <button class="btn btn-primary payment-copy" data-copy="neerajverma@ybl">Copy UPI ID</button>
+              <p class="text-muted small" style="margin-top:10px; font-size:0.85rem; color:#6b7280;">Open in Google Pay / PhonePe / Paytm</p>
+            </div>
+
+            <div class="payment-card reveal">
+              <div class="payment-icon">💳</div>
+              <h3>Phone Pay / Google Pay</h3>
+              <p class="phone-display" style="color:#0b5ed7; font-weight:700; font-size:1.1rem;">+91 86013 51042</p>
+              <button class="btn btn-primary payment-copy" data-copy="+918601351042">Copy Phone Number</button>
+              <p class="text-muted small" style="margin-top:10px; font-size:0.85rem; color:#6b7280;">Use in PayTM / Google Pay / PhonePe</p>
+            </div>
+
+            <div class="payment-card reveal">
+              <div class="payment-icon">🎫</div>
+              <h3>QR Code Payment</h3>
+              <div class="qr-placeholder" style="background:#f5f9ff; border:2px dashed #0b5ed7; border-radius:14px; padding:20px; text-align:center; margin:16px 0;">
+                <div style="font-size:3rem; margin:10px 0;">📲</div>
+                <p style="color:#6b7280; margin:0; font-size:0.9rem;">Add your QR code image in ./images/qr-code.png</p>
+              </div>
+              <p class="text-muted small" style="margin-top:10px; font-size:0.85rem; color:#6b7280;">Scan with any payment app</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="owner" class="owner-section section">
+        <div class="container">
+          <div class="owner-card reveal">
+            <div class="owner-photo-large">
+              <img src="./images/owner-photo.jpg" alt="Owner - Neeraj Verma" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22%3E%3Crect fill=%22%230b5ed7%22 width=%22200%22 height=%22200%22/%3E%3Ctext x=%22100%22 y=%22110%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2280%22 font-weight=%22bold%22%3ENK%3C/text%3E%3C/svg%3E'" />
+            </div>
+            <div class="owner-info">
+              <h2>Neeraj Verma</h2>
+              <p class="owner-role">Founder & Owner</p>
+              <p class="owner-bio">Dedicated to providing fast, reliable, and professional digital service assistance. With years of experience, we help thousands of customers every month navigate government forms, educational applications, and travel bookings with ease.</p>
+              <div class="owner-contact" style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+                <a href="tel:+918601351042" class="btn btn-secondary">📞 Call</a>
+                <a href="https://api.whatsapp.com/send/?phone=918601351042&text=Hello%2C+I+want+to+know+about+your+online+services.&type=phone_number&app_absent=0" class="btn btn-whatsapp">💬 WhatsApp</a>
+                <a href="https://www.instagram.com/neerajverma860135/" target="_blank" class="btn btn-secondary">📸 Instagram</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
